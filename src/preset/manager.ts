@@ -1,9 +1,9 @@
-import { addons, types } from "@storybook/addons";
+import { addons, types } from '@storybook/addons';
 
-import { ADDON_ID, TOOL_ID, PANEL_ID } from "../constants";
-import { Tool } from "../Tool";
-import { Panel } from "../Panel";
-import { Tab } from "../Tab";
+import { ADDON_ID, PANEL_ID, TOOL_ID } from '../constants';
+import { Panel } from '../Panel';
+import { Tab } from '../Tab';
+import { Tool } from '../Tool';
 
 // Register the addon
 addons.register(ADDON_ID, () => {
@@ -26,11 +26,11 @@ addons.register(ADDON_ID, () => {
   // Register the tab
   addons.add(PANEL_ID, {
     type: types.TAB,
-    title: "My addon",
+    title: "Figma",
     //👇 Checks the current route for the story
-    route: ({ storyId }) => `/myaddon/${storyId}`,
+    route: ({ storyId }) => `/figma/${storyId}`,
     //👇 Shows the Tab UI element in myaddon view mode
-    match: ({ viewMode }) => viewMode === "myaddon",
+    match: ({ viewMode }) => viewMode === "figma",
     render: Tab,
   });
 });

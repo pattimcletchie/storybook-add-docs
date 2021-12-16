@@ -1,11 +1,17 @@
-import React from 'react';
+import * as HeaderStories from "./Header.stories";
 
-import { Page } from './Page';
-import * as HeaderStories from './Header.stories';
+import { Page } from "./Page";
+import React from "react";
 
 export default {
-  title: 'Example/Page',
+  title: "Example/Page",
   component: Page,
+  parameters: {
+    docs: {
+      container: (props) => <Page {...props} title="List" />,
+    },
+    myAddonParameter: "hello world",
+  },
 };
 
 const Template = (args) => <Page {...args} />;
